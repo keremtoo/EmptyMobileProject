@@ -1,5 +1,7 @@
 package {
 
+    import com.baracca.mobile.app.AppRoot;
+
     import flash.desktop.NativeApplication;
     import flash.display.Sprite;
     import flash.display.StageAlign;
@@ -39,8 +41,8 @@ package {
             Starling.multitouchEnabled = Capabilities.manufacturer.indexOf( "iOS" ) != -1;
             Starling.handleLostContext = false;
 
-            const stageWidth  = stage.fullScreenWidth;
-            const stageHeight = stage.fullScreenHeight;
+            const stageWidth:int  = stage.fullScreenWidth;
+            const stageHeight:int = stage.fullScreenHeight;
 
             var viewPort : Rectangle = RectangleUtil.fit(
                     new Rectangle( 0, 0, stageWidth, stageHeight ),
