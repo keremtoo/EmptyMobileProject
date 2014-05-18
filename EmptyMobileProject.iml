@@ -14,7 +14,9 @@
         <compiler-options />
         <packaging-air-desktop />
         <packaging-android enabled="true" use-generated-descriptor="false" custom-descriptor-path="$MODULE_DIR$/EmptyProject-app.xml" package-file-name="EmptyProject" />
-        <packaging-ios enabled="true" use-generated-descriptor="false" custom-descriptor-path="$MODULE_DIR$/EmptyProject-app.xml" package-file-name="EmptyProject" />
+        <packaging-ios enabled="true" use-generated-descriptor="false" custom-descriptor-path="$MODULE_DIR$/EmptyProject-app.xml" package-file-name="EmptyProject">
+          <AirSigningOptions keystore-path="$USER_HOME$/Downloads/Certificates-2014.p12" provisioning-profile-path="$USER_HOME$/Downloads/IOS_DEVELOPMENT.mobileprovision" />
+        </packaging-ios>
       </configuration>
     </configurations>
     <compiler-options />
