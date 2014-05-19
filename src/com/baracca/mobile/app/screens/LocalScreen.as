@@ -78,12 +78,12 @@ package com.baracca.mobile.app.screens {
         }
 
 
-        private function triggeredSelectPhoto( event:TouchEvent ):void
+        private function triggeredSelectPhoto( event:Event ):void
         {
         }
 
 
-        private function triggeredTakePhoto( event:TouchEvent ):void
+        private function triggeredTakePhoto( event:Event ):void
         {
         }
     }
