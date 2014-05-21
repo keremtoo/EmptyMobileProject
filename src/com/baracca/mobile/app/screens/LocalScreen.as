@@ -4,11 +4,14 @@
 package com.baracca.mobile.app.screens {
     import feathers.controls.Button;
     import feathers.controls.ButtonGroup;
+    import feathers.controls.Panel;
     import feathers.controls.PanelScreen;
+    import feathers.controls.ScrollContainer;
     import feathers.data.ListCollection;
     import feathers.events.FeathersEventType;
     import feathers.layout.AnchorLayout;
     import feathers.layout.AnchorLayoutData;
+    import feathers.layout.VerticalLayout;
     import feathers.system.DeviceCapabilities;
 
     import flash.ui.Multitouch;
@@ -17,7 +20,6 @@ package com.baracca.mobile.app.screens {
     import starling.core.Starling;
     import starling.display.DisplayObject;
     import starling.events.Event;
-    import starling.events.TouchEvent;
 
     public class LocalScreen extends PanelScreen {
 
@@ -34,19 +36,22 @@ package com.baracca.mobile.app.screens {
         {
             Multitouch.inputMode = MultitouchInputMode.TOUCH_POINT;
 
-            this.layout = new AnchorLayout();
+            const verticalLayout : VerticalLayout = new VerticalLayout();
+            verticalLayout.horizontalAlign = VerticalLayout.HORIZONTAL_ALIGN_JUSTIFY;
+            verticalLayout.verticalAlign = VerticalLayout.VERTICAL_ALIGN_BOTTOM;
+
+            this.layout = verticalLayout;
+
+            var panel : Panel = new Panel( );
+            panel.layout =
+            addChild( panel );
 
             var buttonGroup:ButtonGroup = new ButtonGroup();
             buttonGroup.dataProvider = new ListCollection( [
                 {label: "Select a Photo", triggered: triggeredSelectPhoto},
                 {label: "Take a Photo", triggered: triggeredTakePhoto}
             ] );
-            addChild( buttonGroup );
-
-            const screenLayoutData:AnchorLayoutData = new AnchorLayoutData();
-            screenLayoutData.horizontalCenter = 0;
-            screenLayoutData.verticalCenter = 0;
-            buttonGroup.layoutData = screenLayoutData;
+            panel.addChild( buttonGroup );
             buttonGroup.direction = ButtonGroup.DIRECTION_HORIZONTAL;
 
             this.headerProperties.title = "Photo Capture";
